@@ -1,17 +1,16 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 
 struct Carte {
 	int id;
-	char nume;
 	char* editura;
 	int nrPagini;
 };
 
-struct Carte initializare(int id, char nume, const char* editura, int nrPagini) {
+struct Carte initializare(int id, const char* editura, int nrPagini) {
 	struct Carte c;
 	c.id = id;
-	c.nume = nume;
 	c.nrPagini = nrPagini;
 	if (editura == NULL) {
 		c.editura = NULL;
@@ -24,7 +23,7 @@ struct Carte initializare(int id, char nume, const char* editura, int nrPagini) 
 }
 
 void afisare(struct Carte c) {
-	printf("\n Cartea cu id-ul %d , numele %s , de la editura %s are %d pagini ", c.id, c.nume, c.editura, c.nrPagini);
+	printf("\n Cartea cu id-ul %d , de la editura %s are %d pagini ", c.id, c.editura, c.nrPagini);
 }
 
 void afisareVector(struct Carte* carte, int nrElemente) {
@@ -57,7 +56,7 @@ struct Carte* copiazaPrimeleNCarti(struct Carte* carte, int nrElemente, int nrEl
 	if (nrElementeCopiate < nrElemente && nrElementeCopiate>0) {
 		struct Carte* carteNoua = (struct Carte*)malloc(nrElementeCopiate * sizeof(struct Carte));
 		for (int i = 0; i < nrElementeCopiate; i++) {
-			carteNoua[i] = initializare(carte[i].id, carte[i].nume, carte[i].editura, carte[i].nrPagini);
+			carteNoua[i] = initializare(carte[i].id, carte[i].editura, carte[i].nrPagini);
 
 		}
 		return carteNoua;
@@ -71,8 +70,8 @@ int main() {
 	int nrElemente = 3;
 	struct Carte* vectorCarti;
 	vectorCarti= (struct Carte*)malloc(nrElemente * sizeof(struct Carte));
-	vectorCarti[0] = initializare(1, "La rasarit de Eden", "Adevarul", 302);
-	vectorCarti[1] = initializare(1, "Marele Gatsby", "Humanitas", 156);
-	vectorCarti[2] = initializare(1, "Adio, New Orleans", "Art", 278);
+	vectorCarti[0] = initializare(1, "Adevarul", 302);
+	vectorCarti[1] = initializare(1, "Humanitas", 156);
+	vectorCarti[2] = initializare(1, "Art", 278);
 	afisareVector(vectorCarti, nrElemente);
 }
