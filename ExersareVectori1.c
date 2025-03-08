@@ -66,6 +66,35 @@ struct Carte* copiazaPrimeleNCarti(struct Carte* carte, int nrElemente, int nrEl
 	}
 }
 
+void copiazaCartiCuMultePagini(struct Carte* vector, int nrElemente, float prag, struct Carte** vectorNou, int* dimensiune) {
+	(*dimensiune) = 0;
+	for (char i = 0; i < nrElemente; i++) {
+		if (prag < vector[i].nrPagini) {
+			(*dimensiune)++;
+		}
+	}
+	if ((*dimensiune) > 0) {
+		(*vectorNou) = (struct Carte*)malloc((*dimensiune) * sizeof(struct Carte));
+		int k = 0;
+		for (int i = 0; i < nrElemente; i++) {
+			if (prag < vector[i].nrPagini) {
+				(*vectorNou)[k] = vector[i];
+				(*vectorNou)[k].editura = malloc(sizeof(char) * (strlen(vector[i].editura) + 1));
+				strcpy_s((*vectorNou)[k].editura, strlen(vector[i].editura) + 1, vector[i].editura);
+				k++;
+			}
+		}
+	}
+}
+
+struct Carte getPrimaCarteDupaConditie(struct Carte* vector, int nrElemente, const char* conditie) {
+	for (int i = 0; i < nrElemente; i++) {
+		if (strcmp(vector[i].editura, conditie) == 0)
+			return vector[i];
+	}
+	return initializare(-1, 0, NULL, 0, '-');
+}
+
 int main() {
 	int nrElemente = 3;
 	struct Carte* vectorCarti;
@@ -73,5 +102,25 @@ int main() {
 	vectorCarti[0] = initializare(1, "Adevarul", 302);
 	vectorCarti[1] = initializare(1, "Humanitas", 156);
 	vectorCarti[2] = initializare(1, "Art", 278);
+	printf("Toate cartile:");
 	afisareVector(vectorCarti, nrElemente);
+
+	int nrElementeCopiate = 2;
+	struct Carte* cartiCopiate = copiazaPrimeleNCarti(vectorCarti, nrElemente, nrElementeCopiate);
+	printf("\n\nCartile copiate: ");
+	afisareVector(cartiCopiate, nrElementeCopiate);
+
+	struct Carte* cartiCuMultePagini = NULL;
+	int nrCartiCuMultePagini = 2;
+	copiazaCartiCuMultePagini(vectorCarti, nrElemente,100, &cartiCuMultePagini, &nrCartiCuMultePagini);
+	printf("\n\nAfisare carti cu multe pagini:");
+	afisareVector(cartiCuMultePagini, nrCartiCuMultePagini);
+
+	struct Carte primaCarte1 = getPrimaCarteDupaConditie(vectorCarti, nrElemente, "Art");
+	printf("\nPrima carte:\n");
+	afisare(primaCarte1);
+
+	struct Carte primaCarte2 = getPrimaCarteDupaConditie(vectorCarti, nrElemente, "Carturesti");
+	printf("\nPrima carte:\n");
+	afisare(primaCarte2);
 }
