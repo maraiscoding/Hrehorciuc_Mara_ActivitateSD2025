@@ -3,8 +3,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-//trebuie sa folositi fisierul masini.txt
-//sau va creati un alt fisier cu alte date
 
 struct StructuraMasina {
 	int id;
@@ -17,28 +15,23 @@ struct StructuraMasina {
 typedef struct StructuraMasina Masina;
 
 void afisareMasina(Masina masina) {
-	//afiseaza toate atributele unei masini
-	printf("Masina cu id-ul %d, numarul de usi %d, pretul %.2f, modelul %s, numeLe soferului %s, seria%c\n ",
-		masina.id, masina.nrUsi, masina.pret, masina.model, masina.numeSofer, masina.serie);
+	printf("Id: %d\n", masina.id);
+	printf("Nr usi: %d\n", masina.nrUsi);
+	printf("Pret: %5.2f\n", masina.pret);
+	printf("Model: %s\n", masina.model);
+	printf("Nume sofer: %s\n", masina.numeSofer);
+	printf("Serie: %c\n\n", masina.serie);
 }
 
 void afisareVectorMasini(Masina* masini, int nrMasini) {
-	//afiseaza toate elemente de tip masina din vector
-	//prin apelarea functiei afisareMasina()
-	if (masini != NULL) {
 		for (int i = 0; i < nrMasini; i++)
 			afisareMasina(masini[i]);
-		printf("\n");
-	}
 }
 
 void adaugaMasinaInVector(Masina** masini, int* nrMasini, Masina masinaNoua) {
-	//Masina** masini-adresa adresei, pt a putea modifica
-	//adauga in vectorul primit o noua masina pe care o primim ca parametru
-	//ATENTIE - se modifica numarul de masini din vector;
     Masina* copie;
 	copie =(Masina*)malloc(sizeof(Masina) * ((*nrMasini)+1));
-	for (int i = 0; i < (*nrMasini) - 1; i++) {
+	for (int i = 0; i < *nrMasini; i++) {
 		copie[i] = (*masini)[i];
 	}
 	copie[*nrMasini] = masinaNoua; //il adaugam ca ultim element in copie
@@ -50,42 +43,40 @@ void adaugaMasinaInVector(Masina** masini, int* nrMasini, Masina masinaNoua) {
 }
 
 Masina citireMasinaFisier(FILE* file) {
-	//functia citeste o masina dintr-un strceam deja deschis
-	//masina citita este returnata;
+	Masina m;
 	char buffer[100];
-	fgets(buffer, 100, file);
-	Masina masina;
 	char delimitator[3] = ",\n";
+	fgets(buffer, 100, file);
 	char* token;
 	token = strtok(buffer, delimitator);
-	masina.id = atoi(token);
+	m.id = atoi(token);
+	m.nrUsi = atoi(strtok(NULL, delimitator));
+	m.pret = atof(strtok(NULL, delimitator));
 	token = strtok(NULL, delimitator);
-	masina.nrUsi = atoi(token);
+	m.model = malloc(sizeof(char) * (strlen(token) + 1));
+	strcpy_s(m.model, strlen(token) + 1, token);
 	token = strtok(NULL, delimitator);
-	masina.pret = atof(token);
+	m.numeSofer = malloc(sizeof(char) * (strlen(token) + 1));
+	strcpy_s(m.numeSofer, strlen(token) + 1, token);
 	token = strtok(NULL, delimitator);
-	masina.model = (char*)malloc(strlen(token) + 1);
-	strcpy_s(masina.model, strlen(token) + 1, token);
-	token = strtok(NULL, delimitator);
-	masina.numeSofer = (char*)malloc(strlen(token) + 1);
-	strcpy_s(masina.numeSofer, strlen(token) + 1, token);
-	token = strtok(NULL, delimitator);
-	masina.serie = *strtok(NULL,delimitator);
-	return masina;
+	m.serie = token[0];
+	return m;
 }
 
 Masina* citireVectorMasiniFisier(const char* numeFisier, int* nrMasiniCitite) {
-	//functia primeste numele fisierului, il deschide si citeste toate masinile din fisier
-	//prin apelul repetat al functiei citireMasinaFisier()
-	//numarul de masini este determinat prin numarul de citiri din fisier
-	//ATENTIE - la final inchidem fisierul/stream-ul
 	FILE* file = fopen(numeFisier, "r");
-	Masina* masini = NULL;
-	do {
-		adaugaMasinaInVector(&masini, nrMasiniCitite, citireMasinaFisier(file));
-	} while (!feof(file));
-	fclose(file);
-	return masini;
+	if (!file) {
+		printf("Eroare: Nu s-a putut deschide fisierul %s\n", numeFisier);
+		return NULL;
+	}
+	else {
+		Masina* masini = NULL;
+		do {
+			adaugaMasinaInVector(&masini, nrMasiniCitite, citireMasinaFisier(file));
+		} while (!feof(file));
+		fclose(file);
+		return masini;
+	}
 }
 
 void dezalocareVectorMasini(Masina** vector, int* nrMasini) {
@@ -118,11 +109,11 @@ float pretMediuDupaNrUsi(Masina* vector, int nrMasini, int nrUsi) {
 
 int main() {
 	Masina* masini = NULL;
-	int dim = 0;
-    masini = citireVectorMasiniFisier("masini.txt", &dim);
-	afisareVectorMasini(masini, dim);	
+	int nrMasini = 0;
+    masini = citireVectorMasiniFisier("masini1.txt", &nrMasini);
+	afisareVectorMasini(masini, nrMasini);	
 
-	float medie = pretMediuDupaNrUsi(masini, dim, 5);
-	printf("Media este:", medie);
+	float medie = pretMediuDupaNrUsi(masini, nrMasini, 5);
+	printf("Media este:%5.2f\n", medie);
 	return 0;
 }
