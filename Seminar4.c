@@ -201,7 +201,15 @@ int main() {
 	printf("Pretul masinilor lui Ionescu este: %5.2f", pretSofer);
 
 	printf("\n%s", getCeaMaiScumpaMasina(cap));
+
+	char serieCautata = 'A';
+	stergeMasiniDinSeria(&cap, serieCautata);
+	printf("Seria dupa stergere:\n");
+	afisareListaMasini(cap);
+
 	dezalocareListaMasini(&cap);
 
+	
+	
 	return 0;
 }
