@@ -63,8 +63,7 @@ void adaugaMasinaInLista(Nod** cap, Masina masinaNoua) {
 	nou->next = NULL;
 	if ((*cap) == NULL) {
 		(*cap) = nou;
-	}
-	else {
+	} else {
 		Nod* p = (*cap);
 		while (p->next != NULL) {
 			p = p->next;
@@ -125,9 +124,38 @@ float calculeazaPretMediu(Nod* lista) {
 	return suma / count;
 }
 
-void stergeMasiniDinSeria(/*lista masini*/ char serieCautata) {
-	//sterge toate masinile din lista care au seria primita ca parametru.
-	//tratati situatia ca masina se afla si pe prima pozitie, si pe ultima pozitie
+void stergeMasiniDinSeria(Nod** lista, char serieCautata) {
+	Nod* p = *lista;
+	while (p != NULL && p->info.serie == serieCautata) {
+		Nod* sters = p;
+		p = p->next;
+
+		free(sters->info.model);
+		free(sters->info.numeSofer);
+		free(sters);
+	}
+
+	*lista = p;
+	if (p != NULL) {
+		Nod* ant = p;
+		Nod* curent = p->next;
+		while (curent != NULL) {
+			if (curent->info.serie == serieCautata) {
+				Nod* sters = curent;
+				ant->next = curent->next;
+				curent = curent->next;
+
+				free(sters->info.model);
+				free(sters->info.numeSofer);
+				free(sters);
+			}
+			else {
+				ant = curent;
+				curent = curent->next;
+			}
+		}
+
+	}
 }
 
 float calculeazaPretulMasinilorUnuiSofer(Nod* lista, const char* numeSofer) {
