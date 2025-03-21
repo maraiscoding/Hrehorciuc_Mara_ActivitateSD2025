@@ -1,3 +1,4 @@
 1,2000.00,2021,MINA,Alexandru
 2,2500.89,2023,Cotroceni,Ilinca
 3,1231.00,2019,Floreasca,Radu
+4,1345.00,2024,Floreasca,Mihaela

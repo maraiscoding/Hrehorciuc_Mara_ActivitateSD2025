@@ -99,8 +99,68 @@ void dezalocareListaPicturi(Nod** cap) {
 	}
 }
 
+//pt o pictura data prin numeAutor si centruExpozitie, modificam centruExpozitie
+void modificaCentruExpozitie(Nod* lista, const char* numeAutor, const char* centru, const char* centruNou) {
+	while (lista != NULL) {
+		if (strcmp(lista->info.numeAutor, numeAutor) == 0 && strcmp(lista->info.centruExpozitie, centru) == 0) {
+			free(lista->info.centruExpozitie);
+			lista->info.centruExpozitie = (char*)malloc(sizeof(char) * (strlen(centruNou) + 1));
+			strcpy(lista->info.centruExpozitie, centruNou);
+		}
+		lista = lista->next;
+	}
+}
+
+//pret mediu per centru expozitie
+float calculeazaPretMediuPerCentru(Nod* lista, const char* centruExpozitie) {
+	if (!lista) {
+		return 0;
+	}
+	float suma = 0;
+	int count = 0;
+	while(lista) {
+		if (strcmp(lista->info.centruExpozitie, centruExpozitie) == 0) {
+			suma += lista->info.pret;
+			count++;
+		}
+		lista = lista->next;
+		}
+	return suma / count;
+}
+
+char* getCeaMaiScumpaPictura(Nod* lista) {
+	float pretulMaxim = 0;
+	char* picturaScumpa = NULL;
+	while (lista) {
+		if (lista->info.pret > pretulMaxim) {
+			pretulMaxim = lista->info.pret;
+			picturaScumpa = lista->info.numeAutor;
+		}
+		lista = lista->next;
+	}
+	if (pretulMaxim > 0) {
+		char* nou = malloc(strlen(picturaScumpa));
+		strcpy_s(nou, strlen(picturaScumpa) + 1, picturaScumpa);
+		return nou;
+	}
+	else {
+		return NULL;
+	}
+}
+
+
 int main() {
 	Nod* cap = NULL;
 	cap = citireListaPicturiDinFisier("picturi.txt");
 	afisareListaPicturi(cap);
+
+	modificaCentruExpozitie(cap, "Ilinca", "Cotroceni", "Domenii");
+	printf("Lista dupa modificare:\n");
+	afisareListaPicturi(cap);
+
+	const char* centru = "Floreasca";
+	float pret = calculeazaPretMediuPerCentru(cap, centru);
+	printf("Pretul mediu este:%5.2f\n", pret);
+
+	printf("Numele autorului care are cea mai scumpa pictura este: %s", getCeaMaiScumpaPictura(cap));
 }
