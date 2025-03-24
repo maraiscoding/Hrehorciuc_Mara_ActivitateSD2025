@@ -33,5 +33,8 @@
     <ClCompile Include="ListaSimplaPictura.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ListaSimplaCurse.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
