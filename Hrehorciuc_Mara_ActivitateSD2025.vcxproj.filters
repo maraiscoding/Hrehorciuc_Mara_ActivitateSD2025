@@ -36,5 +36,8 @@
     <ClCompile Include="ListaSimplaCurse.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ListaSimplaVacanta.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
