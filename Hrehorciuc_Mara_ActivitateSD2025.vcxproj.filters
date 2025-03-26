@@ -42,5 +42,8 @@
     <ClCompile Include="ListaSimplaCocktail.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Seminar5.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
