@@ -1,0 +1,5 @@
+1,120,Roma,spate
+2,230,Barcelona,fata
+3,145,Milano,fata
+3,450,Dubai,spate
+4,110,Roma,fata
