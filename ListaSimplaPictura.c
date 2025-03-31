@@ -36,7 +36,7 @@
 //	token = strtok(NULL, delimitator);
 //	p.numeAutor = malloc(strlen(token) + 1);
 //	strcpy_s(p.numeAutor, strlen(token) + 1, token);
-//
+//  token = strtok(NULL, delimitator);
 //	return p;
 //}
 //
