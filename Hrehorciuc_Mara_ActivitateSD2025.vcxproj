@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="ExersareVectori1.c" />
     <ClCompile Include="ListaDublaPictura.c" />
+    <ClCompile Include="ListaDublaVacanta.c" />
     <ClCompile Include="ListaSimplaBiletAvion.c" />
     <ClCompile Include="ListaSimplaCocktail.c" />
     <ClCompile Include="ListaSimplaCurse.c" />
