@@ -54,5 +54,11 @@
     <ClCompile Include="ListaDublaVacanta.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ListaSimplaBuchet.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Seminar6.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

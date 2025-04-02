@@ -131,6 +131,7 @@
     <ClCompile Include="ListaDublaPictura.c" />
     <ClCompile Include="ListaDublaVacanta.c" />
     <ClCompile Include="ListaSimplaBiletAvion.c" />
+    <ClCompile Include="ListaSimplaBuchet.c" />
     <ClCompile Include="ListaSimplaCocktail.c" />
     <ClCompile Include="ListaSimplaCurse.c" />
     <ClCompile Include="ListaSimplaPictura.c" />
@@ -139,6 +140,7 @@
     <ClCompile Include="Seminar3.c" />
     <ClCompile Include="Seminar4.c" />
     <ClCompile Include="Seminar5.c" />
+    <ClCompile Include="Seminar6.c" />
     <ClCompile Include="TaskListe.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
