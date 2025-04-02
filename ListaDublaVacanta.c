@@ -111,9 +111,26 @@ Lista citireListaDublaFisier(const char* numeF) {
 	return lista;
 }
 
+void dezalocareLD(Lista* lista) {
+	Nod* p = lista->prim;
+	while (p->next != NULL) {
+		free(p->info.hotel);
+		free(p->info.destinatie);
+		p = p->next;
+		free(p->prev);
+	}
+	free(p->info.hotel);
+	free(p->info.destinatie);
+	free(p);
+	lista->prim = NULL;
+	lista->ultim = NULL;
+}
+
 
 int main() {
 	Lista lista;
 	lista = citireListaDublaFisier("vacante.txt");
 	afisareListaVacanteFinal(lista);
+
+	dezalocareLD(&lista);
 }

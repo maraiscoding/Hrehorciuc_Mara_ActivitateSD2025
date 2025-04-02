@@ -113,8 +113,20 @@
 //	return lista;
 //}
 //
-//void dezalocare(Lista lista) {
-//	Nod* p = lista->prim
+//
+//void dezalocareLD(Lista* lista) {
+//	Nod* p = lista->prim;
+//	while (p->next != NULL) {
+//		free(p->info.numeAutor);
+//		free(p->info.centruExpozitie);
+//		p = p->next;
+//		free(p->prev);
+//	}
+//	free(p->info.numeAutor);
+//	free(p->info.centruExpozitie);
+//	free(p);
+//	lista->prim = NULL;
+//	lista->ultim = NULL;
 //}
 //
 //int main() {
@@ -122,4 +134,5 @@
 //	lista = citesteListaDinFisier("picturi.txt");
 //	afisareListaDublaPicturiFinal(lista);
 //
+//	dezalocareLD(&lista);
 //}
