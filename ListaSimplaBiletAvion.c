@@ -165,16 +165,16 @@
 //}
 //
 //int main() {
-//	//Nod* cap = NULL;
-//	//cap = citesteListaBileteFisier("bilete.txt");
-//	//afisareListaBilete(cap);
-//
-//	//printf("Pretul mediu este:%5.2f\n", calculeazaPretMediu(cap));
-//	//printf("Pretul mediu al biletelor catre Roma este:%5.2f\n", calculeazaPretMediuDestinatie(cap, "Roma"));
-//	//printf("Cea mai scumpa destinatie:%s\n", getCelMaiScumpBilet(cap));
-//	//modificaPoartaImbarcare(cap, "Roma", "spate", "fata");
-//	//printf("Lista noua:\n");
-//	//afisareListaBilete(cap);
+//Nod* cap = NULL;
+//cap = citesteListaBileteFisier("bilete.txt");
+//afisareListaBilete(cap);
+
+//printf("Pretul mediu este:%5.2f\n", calculeazaPretMediu(cap));
+//printf("Pretul mediu al biletelor catre Roma este:%5.2f\n", calculeazaPretMediuDestinatie(cap, "Roma"));
+//printf("Cea mai scumpa destinatie:%s\n", getCelMaiScumpBilet(cap));
+//modificaPoartaImbarcare(cap, "Roma", "spate", "fata");
+//printf("Lista noua:\n");
+//afisareListaBilete(cap);
 //
 //	Nod* cap1 = NULL;
 //	Bilet b1 = initializareBilet(11, 134, "Istanbul", "spate");
