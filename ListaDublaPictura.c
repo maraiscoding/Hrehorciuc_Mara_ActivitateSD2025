@@ -170,6 +170,34 @@ void afisareListaSimpla(NodSimplu* cap) {
 	}
 }
  
+void afisareVectorPicturi(Pictura* picturi, int nrPicturi) {
+	for (int i = 0; i < nrPicturi; i++) {
+		afisarePictura(picturi[i]);
+	}
+}
+
+void adaugaInVector(Pictura** picturi, int* nrPicturi, Pictura picturaNoua) {
+	Pictura* copie;
+	copie = (Pictura*)malloc(sizeof(Pictura) * ((*nrPicturi) + 1));
+	for (int i = 0; i < *nrPicturi; i++) {
+		copie[i] = (*picturi)[i];
+	}
+	copie[*nrPicturi] = picturaNoua; 
+	(*nrPicturi)++;
+	if ((*picturi) != NULL) {
+		free((*picturi));
+	}
+	(*picturi) = copie;
+}
+
+void adaugaPicturiDinListaDublaInVector(Lista lista, Pictura** picturi, int* nrPicturi) {
+	Nod* p = lista.prim;
+	while (p) {
+		adaugaInVector(picturi, nrPicturi, p->info);
+		p = p->next;
+	}
+}
+
 
 int main() {
 	Lista lista;
@@ -179,6 +207,13 @@ int main() {
 	NodSimplu* listaSimpla = copieListaDublaInListaSimpla(lista);
 	printf("\nAfisare lista simpla:\n");
 	afisareListaSimpla(listaSimpla); 
+
+	Pictura* picturi = NULL;
+	int nrPicturi = 0;
+	adaugaPicturiDinListaDublaInVector(lista, &picturi, &nrPicturi);
+
+	printf("\nAfisare vector picturi:\n");
+	afisareVectorPicturi(picturi, nrPicturi);
 
 	dezalocareLD(&lista);
 }
