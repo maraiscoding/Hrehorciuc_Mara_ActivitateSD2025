@@ -60,5 +60,8 @@
     <ClCompile Include="Seminar6.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HashTablePictura.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

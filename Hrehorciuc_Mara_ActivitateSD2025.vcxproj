@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ExersareVectori1.c" />
+    <ClCompile Include="HashTablePictura.c" />
     <ClCompile Include="ListaDublaPictura.c" />
     <ClCompile Include="ListaDublaVacanta.c" />
     <ClCompile Include="ListaSimplaBiletAvion.c" />
