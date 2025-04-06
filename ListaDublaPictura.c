@@ -129,6 +129,27 @@ void dezalocareLD(Lista* lista) {
 	lista->ultim = NULL;
 }
 
+
+
+char* getCeaMaiScumpaPictura(Lista lista) {
+	if (lista.prim > 0) {
+		Nod* max = lista.prim;
+		Nod* p = lista.prim->next;
+		while (p) {
+			if (p->info.pret > max->info.pret) {
+				max = p;
+			}
+			p = p->next;
+		}
+		char* nume = (char*)malloc(strlen(max->info.numeAutor) + 1);
+		strcpy_s(nume, strlen(max->info.numeAutor) + 1, max->info.numeAutor);
+		return nume;
+	}
+	else {
+		return NULL;
+	}
+}
+
 typedef struct NodSimplu NodSimplu;
 
 struct NodSimplu {
@@ -203,6 +224,8 @@ int main() {
 	Lista lista;
 	lista = citesteListaDinFisier("picturi.txt");
 	afisareListaDublaPicturiFinal(lista);
+
+	printf("Cea mai scumpa pictura e facuta de: %s\n", getCeaMaiScumpaPictura(lista));
 
 	NodSimplu* listaSimpla = copieListaDublaInListaSimpla(lista);
 	printf("\nAfisare lista simpla:\n");
