@@ -137,6 +137,7 @@
     <ClCompile Include="ListaSimplaCurse.c" />
     <ClCompile Include="ListaSimplaPictura.c" />
     <ClCompile Include="ListaSimplaVacanta.c" />
+    <ClCompile Include="PregatireTestLS1.c" />
     <ClCompile Include="Seminar2.c" />
     <ClCompile Include="Seminar3.c" />
     <ClCompile Include="Seminar4.c" />

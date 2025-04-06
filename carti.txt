@@ -1,0 +1,4 @@
+1,34.00,Tolstoi,Art
+2,40.00,Dickens,Art
+3,40.00,Mann,Adevarul
+4,50.00,Steinbeck,Humanitas
