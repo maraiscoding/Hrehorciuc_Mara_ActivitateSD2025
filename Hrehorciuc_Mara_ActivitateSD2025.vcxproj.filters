@@ -72,5 +72,11 @@
     <ClCompile Include="PregatireTestLS2.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PregatireTestLD2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PregatireTestHT1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
