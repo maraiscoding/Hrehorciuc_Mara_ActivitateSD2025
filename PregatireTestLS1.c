@@ -130,6 +130,16 @@ char* getCeaMaiScumpaCarte(Nod* lista) {
 	}
 }
 
+void dezalocare(Nod** cap) {
+	while ((*cap)) {
+		Nod* aux = (*cap);
+		(*cap) = (*cap)->next;
+		free(aux->info.editura);
+		free(aux->info.autor);
+		free(aux);
+	}
+}
+
 int main() {
 	Nod* cap = NULL;
 	cap = citireListaDinFisier("carti.txt");
@@ -137,4 +147,6 @@ int main() {
 
 	printf("Pretul mediu este:%5.2f\n", calculeazaPretMediu(cap));
 	printf("Cartea cea mai scumpa apartine autorului:%s\n", getCeaMaiScumpaCarte(cap));
+
+	dezalocare(&cap);
 }
