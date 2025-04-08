@@ -140,6 +140,7 @@
     <ClCompile Include="PregatireTestHT1.c" />
     <ClCompile Include="PregatireTestLD1.c" />
     <ClCompile Include="PregatireTestLD2.c" />
+    <ClCompile Include="PregatireTestLD3.c" />
     <ClCompile Include="PregatireTestLS1.c" />
     <ClCompile Include="PregatireTestLS2.c" />
     <ClCompile Include="PregatireTestLS3.c" />
