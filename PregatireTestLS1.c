@@ -140,7 +140,7 @@
 //	}
 //}
 //
-////vreau sa pun elementele din lista simpla intr-on lista dubla
+////vreau sa pun elementele din lista simpla intr-o lista dubla
 //
 //typedef struct NodDublu NodDublu;
 //
@@ -318,19 +318,4 @@
 //	dezalocare(&cap);
 //}
 //
-//Nod* inserareListaDublaInListaSimpla(ListaDubla lista) {
-//    Nod* cap = NULL;
-//    NodDublu* p = lista.prim;
-//    while (p) {
-//        // Cream o copie a cartii pentru a evita probleme la dealocare
-//        Carte copie = initializareCarte(
-//            p->info.id,
-//            p->info.pret,
-//            p->info.autor,
-//            p->info.editura
-//        );
-//        adaugaCarteLaFinal(&cap, copie);
-//        p = p->next;
-//    }
-//    return cap;
-//}
+//
