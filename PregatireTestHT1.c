@@ -164,7 +164,7 @@
 //	return suma / count;
 //}
 //
-//float* calculeazaPreturiMediiClustere(HashTable ht, int* nrClustere) {
+//float* calculeazaPreturiMediiPerClustere(HashTable ht, int* nrClustere) {
 //	float* preturi = NULL;
 //	*nrClustere = 0;
 //	for (int i = 0; i < ht.dim; i++) {
@@ -176,7 +176,7 @@
 //	int contor = 0;
 //	for (int i = 0; i < ht.dim; i++) {
 //		if (ht.vector[i] != NULL) {
-//			preturi[contor] = calculeazaMedieLista(ht.vector[i]);
+//			preturi[contor] = calculeazaMedieLista(&(ht.vector[i]));
 //			contor++;
 //		}
 //	}
