@@ -3,8 +3,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-//trebuie sa folositi fisierul masini.txt
-//sau va creati un alt fisier cu alte date
 
 struct StructuraMasina {
 	int id;
@@ -151,10 +149,66 @@ void afisarePreOrdine(Nod* arbore) //SRD - INORDINE
 	}
 }
 
+//void dezalocareArboreDeMasini(Nod** arbore) {
+//	if (*arbore) {
+//		dezalocareArboreDeMasini(&(*arbore)->st);
+//		dezalocareArboreDeMasini(&(*arbore)->dr);
+//		free((*arbore)->info.model);
+//		free((*arbore)->info.numeSofer);
+//		free(*arbore);
+//		*arbore = NULL;
+//	}
+//}
+
+Masina getMasinaByID(Nod* arbore, int id) {
+	Masina m;
+	m.id = -1;
+	if (arbore) {
+		if (arbore->info.id < id) {
+			return getMasinaByID(arbore->dr, id);
+		}
+		else if (arbore->info.id > id) {
+			return getMasinaByID(arbore->st, id);
+		}
+		else {
+			return arbore->info;
+		}
+	}
+	return m;
+}
+
+int determinaNumarNoduri(Nod* arbore) {
+	if (arbore) {
+		int noduriSt = determinaNumarNoduri(arbore->st);
+		int noduriDr = determinaNumarNoduri(arbore->dr);
+		return 1 + noduriSt + noduriDr;
+	}
+	return 0;
+}
 
 
-//Preluati urmatoarele functii din laboratorul precedent.
-//Acestea ar trebuie sa functioneze pe noul arbore echilibrat.
+float calculeazaPretTotal(Nod* arbore) {
+	if (arbore) {
+		float totalSt = calculeazaPretTotal(arbore->st);
+		float totalDr = calculeazaPretTotal(arbore->dr);
+		return arbore->info.pret + totalSt + totalDr;
+	}
+	return 0;
+}
+
+float calculeazaPretulMasinilorUnuiSofer(Nod* arbore, const char* numeSofer) {
+	if (arbore) {
+		float totalSt = calculeazaPretulMasinilorUnuiSofer(arbore->st, numeSofer);
+		float totalDr = calculeazaPretulMasinilorUnuiSofer(arbore->dr, numeSofer);
+		float sumaCrt = 0;
+		if (strcmp(arbore->info.numeSofer, numeSofer) == 0) {
+			sumaCrt = arbore->info.pret;
+		}
+		return sumaCrt + totalSt + totalDr;
+	}
+	return 0;
+}
+
 
 
 int main() {
