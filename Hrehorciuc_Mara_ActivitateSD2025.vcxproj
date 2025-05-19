@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ArborePictura.c" />
+    <ClCompile Include="ArboreVacanta.c" />
     <ClCompile Include="ExersareVectori1.c" />
     <ClCompile Include="HashTablePictura.c" />
     <ClCompile Include="ListaDublaPictura.c" />

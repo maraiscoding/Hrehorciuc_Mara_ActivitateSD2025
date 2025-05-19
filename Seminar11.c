@@ -44,9 +44,6 @@
 //	printf("Serie: %c\n\n", masina.serie);
 //}
 //
-////STACK
-////Alegeti prin ce veti reprezenta stiva si creati structura necesara acestei stive
-////putem reprezenta o stiva prin LSI, LDI sau vector
 //struct Nod {
 //	Masina info;
 //	struct Nod* next;
@@ -203,7 +200,7 @@
 //
 //	dezalocareStivaDeMasini(&stiva);
 //
-//	ListaDubla coada = citireCoadaDeMasiniDinFisier("masini.txt");
+//	ListaDubla coada = citireCoadaDeMasiniDinFisier("masini2.txt");
 //	Masina m2 = dequeue(&coada);
 //	afisareMasina(m2);
 //	return 0;
