@@ -168,7 +168,7 @@
 //Nod* cap = NULL;
 //cap = citesteListaBileteFisier("bilete.txt");
 //afisareListaBilete(cap);
-
+//
 //printf("Pretul mediu este:%5.2f\n", calculeazaPretMediu(cap));
 //printf("Pretul mediu al biletelor catre Roma este:%5.2f\n", calculeazaPretMediuDestinatie(cap, "Roma"));
 //printf("Cea mai scumpa destinatie:%s\n", getCelMaiScumpBilet(cap));

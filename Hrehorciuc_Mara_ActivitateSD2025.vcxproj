@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ArboreBiletAvion.c" />
     <ClCompile Include="ArborePictura.c" />
     <ClCompile Include="ArboreVacanta.c" />
     <ClCompile Include="ExersareVectori1.c" />
