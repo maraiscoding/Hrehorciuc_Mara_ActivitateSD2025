@@ -111,5 +111,8 @@
     <ClCompile Include="ArboreBiletAvion.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ArboreAVLPictura.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
