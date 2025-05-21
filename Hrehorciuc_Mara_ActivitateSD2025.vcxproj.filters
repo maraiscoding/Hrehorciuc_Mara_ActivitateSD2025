@@ -120,5 +120,8 @@
     <ClCompile Include="HeapCursa.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HeapBuchet.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
