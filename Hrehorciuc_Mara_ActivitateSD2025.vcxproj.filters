@@ -123,5 +123,8 @@
     <ClCompile Include="HeapBuchet.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PregatireTestArbore1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

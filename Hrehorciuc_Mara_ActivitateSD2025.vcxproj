@@ -144,6 +144,7 @@
     <ClCompile Include="ListaSimplaCurse.c" />
     <ClCompile Include="ListaSimplaPictura.c" />
     <ClCompile Include="ListaSimplaVacanta.c" />
+    <ClCompile Include="PregatireTestArbore1.c" />
     <ClCompile Include="PregatireTestHT1.c" />
     <ClCompile Include="PregatireTestHT3.c" />
     <ClCompile Include="PregatireTestLD1.c" />
