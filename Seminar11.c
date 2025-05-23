@@ -166,13 +166,13 @@
 //	return coada;
 //}
 //
-//void dezalocareCoadaDeMasini(/*coada*/) {
-//	//sunt dezalocate toate masinile si coada de elemente
+//void dezalocareCoadaDeMasini(ListaDubla* coada) {
+//	while (coada->first) {
+//		Masina m = dequeue(coada);
+//		free(m.model);
+//		free(m.numeSofer);
+//	}
 //}
-//
-////metode de procesare - de facut pe stiva si pe coada
-//Masina getMasinaByID(/*stiva sau coada de masini*/int id);
-//float calculeazaPretTotal(/*stiva sau coada de masini*/);
 //
 //float calculeazaPretTotalStiva(Nod** stiva) {
 //	Nod* temp = NULL;
@@ -187,6 +187,57 @@
 //	}
 //	return suma;
 //}
+//
+//float calculeazaPretTotalCoada(ListaDubla* coada) {
+//	ListaDubla temp;
+//	temp.first = NULL;
+//	temp.last = NULL;
+//	float suma = 0;
+//	while (coada->first) {
+//		Masina m = dequeue(coada);
+//		suma += m.pret;
+//		enqueue(&temp, m);
+//	}
+//	while (temp.first) {
+//		enqueue(coada, dequeue(&temp));
+//	}
+//	return suma;
+//}
+//
+//Masina getMasinaByIDStiva(Nod** stiva, int id) {
+//	Nod* temp = NULL;
+//	Masina rezultat = (Masina){ -1, 0, 0, NULL, NULL, '-' };
+//	while (!isStackEmpty(*stiva)) {
+//		Masina masina = popStack(stiva);
+//		if (masina.id == id && rezultat.id == -1) {
+//			rezultat = masina;
+//		}
+//		pushStack(&temp, masina);
+//	}
+//	while (!isStackEmpty(temp)) {
+//		pushStack(stiva, popStack(&temp));
+//	}
+//	return rezultat;
+//}
+//
+//Masina getMasinaByIDCoada(ListaDubla* coada, int id) {
+//	ListaDubla temp;
+//	temp.first = NULL;
+//	temp.last = NULL;
+//	Masina rezultat = (Masina){ -1, 0, 0, NULL, NULL, '-' };
+//	while (coada->first) {
+//		Masina m = dequeue(coada);
+//		if (m.id == id && rezultat.id == -1) {
+//			rezultat = m;
+//		}
+//		enqueue(&temp, m);
+//	}
+//	while (temp.first) {
+//		enqueue(coada, dequeue(&temp));
+//	}
+//	return rezultat;
+//}
+//
 //
 //int main() {
 //	Nod* stiva = citireStackMasiniDinFisier("masini2.txt");
@@ -203,5 +254,11 @@
 //	ListaDubla coada = citireCoadaDeMasiniDinFisier("masini2.txt");
 //	Masina m2 = dequeue(&coada);
 //	afisareMasina(m2);
+//
+//	printf("Pret total: %.2f\n\n", calculeazaPretTotalCoada(&coada));
+//	printf("Afisare masina cautata dupa id: \n");
+//	afisareMasina(getMasinaByIDCoada(&coada, 3));
+//
+//	dezalocareCoadaDeMasini(&coada);
 //	return 0;
 //}

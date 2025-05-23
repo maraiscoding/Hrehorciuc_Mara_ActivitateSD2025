@@ -155,6 +155,7 @@
     <ClCompile Include="PregatireTestLS1.c" />
     <ClCompile Include="PregatireTestLS2.c" />
     <ClCompile Include="PregatireTestLS3.c" />
+    <ClCompile Include="PregatireTestStiva1.c" />
     <ClCompile Include="Seminar10.c" />
     <ClCompile Include="Seminar11.c" />
     <ClCompile Include="Seminar2.c" />
