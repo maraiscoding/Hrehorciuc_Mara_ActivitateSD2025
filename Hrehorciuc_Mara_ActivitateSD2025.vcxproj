@@ -146,6 +146,7 @@
     <ClCompile Include="ListaSimplaVacanta.c" />
     <ClCompile Include="PregatireTesHeap1.c" />
     <ClCompile Include="PregatireTestArbore1.c" />
+    <ClCompile Include="PregatireTestArboreAVL1.c" />
     <ClCompile Include="PregatireTestHT1.c" />
     <ClCompile Include="PregatireTestHT3.c" />
     <ClCompile Include="PregatireTestLD1.c" />
@@ -158,6 +159,7 @@
     <ClCompile Include="PregatireTestStiva1.c" />
     <ClCompile Include="Seminar10.c" />
     <ClCompile Include="Seminar11.c" />
+    <ClCompile Include="Seminar12.c" />
     <ClCompile Include="Seminar2.c" />
     <ClCompile Include="Seminar3.c" />
     <ClCompile Include="Seminar4.c" />

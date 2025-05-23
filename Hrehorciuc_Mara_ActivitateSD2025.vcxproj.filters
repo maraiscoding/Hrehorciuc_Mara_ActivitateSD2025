@@ -132,5 +132,11 @@
     <ClCompile Include="PregatireTestStiva1.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Seminar12.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PregatireTestArboreAVL1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
