@@ -147,6 +147,7 @@
     <ClCompile Include="PregatireTesHeap1.c" />
     <ClCompile Include="PregatireTestArbore1.c" />
     <ClCompile Include="PregatireTestArboreAVL1.c" />
+    <ClCompile Include="PregatireTestCoada.c" />
     <ClCompile Include="PregatireTestHT1.c" />
     <ClCompile Include="PregatireTestHT3.c" />
     <ClCompile Include="PregatireTestLD1.c" />
