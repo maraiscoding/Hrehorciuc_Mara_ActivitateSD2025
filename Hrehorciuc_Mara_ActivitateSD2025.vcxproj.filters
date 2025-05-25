@@ -153,5 +153,8 @@
     <ClCompile Include="PregatireTestHeap2.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PregatireTestHeap4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
