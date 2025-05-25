@@ -141,5 +141,11 @@
     <ClCompile Include="PregatireTestCoada.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PregatireTestCoada2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PregatireTestStiva2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
