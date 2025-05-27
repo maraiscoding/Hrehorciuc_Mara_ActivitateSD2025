@@ -135,6 +135,7 @@
     <ClCompile Include="ExersareVectori1.c" />
     <ClCompile Include="HashTablePictura.c" />
     <ClCompile Include="HeapBuchet.c" />
+    <ClCompile Include="HeapCocktail.c" />
     <ClCompile Include="HeapCursa.c" />
     <ClCompile Include="ListaDublaPictura.c" />
     <ClCompile Include="ListaDublaVacanta.c" />

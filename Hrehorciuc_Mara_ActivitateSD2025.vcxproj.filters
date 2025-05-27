@@ -162,5 +162,8 @@
     <ClCompile Include="PregatireTestArboreAVL.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HeapCocktail.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
