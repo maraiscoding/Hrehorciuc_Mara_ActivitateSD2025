@@ -174,5 +174,8 @@
     <ClCompile Include="StivaCocktail.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CoadaCocktail.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
