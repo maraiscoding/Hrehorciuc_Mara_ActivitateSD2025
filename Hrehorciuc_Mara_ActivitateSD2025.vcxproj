@@ -178,6 +178,7 @@
     <ClCompile Include="Seminar6.c" />
     <ClCompile Include="Seminar8.c" />
     <ClCompile Include="Seminar9.c" />
+    <ClCompile Include="StivaCocktail.c" />
     <ClCompile Include="TaskListe.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
