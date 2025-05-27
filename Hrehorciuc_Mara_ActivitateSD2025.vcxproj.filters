@@ -168,5 +168,8 @@
     <ClCompile Include="ArboreCocktail.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ArboreAVLCocktail.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

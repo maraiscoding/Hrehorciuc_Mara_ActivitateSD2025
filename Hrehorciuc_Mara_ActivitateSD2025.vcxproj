@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ArboreAVLCocktail.c" />
     <ClCompile Include="ArboreAVLPictura.c" />
     <ClCompile Include="ArboreAVLVacanta.c" />
     <ClCompile Include="ArboreBiletAvion.c" />
